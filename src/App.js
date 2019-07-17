@@ -33,7 +33,7 @@ const dateInputHandler = (event) => {
 
   return (
     <div className="App">
-      <Header date={secondDate}/>
+      <Header />
       <DateInput dateHandler={(event) => dateInputHandler(event)}/>
       <Display images={spaceState}/>
     </div>

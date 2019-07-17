@@ -4,6 +4,7 @@ import React from 'react';
 const DateInput = (props) => {
     return (
         <div>
+            <h3>Pick a date range to display</h3>
             <form onSubmit={props.dateHandler}>
                 <p>Start Date</p>
                 <input type="date"
