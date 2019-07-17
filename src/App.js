@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import "./App.css";
+import Header from './components/Header';
 import Display from './components/Display';
+import DateInput from './components/DateInput';
 
 function App() {
   const [spaceState, setSpaceState] = useState([])
-  const [dates, setDates] = useState([])
-  console.log(spaceState)
-  useEffect(() => {
-  axios.get('https://api.nasa.gov/planetary/apod?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY')
+  const [firstDate, setFirstDate] = useState('2015-09-07')
+  const [secondDate, setSecondDate] = useState('2015-09-08');
+ 
+
+ useEffect(() => {
+  axios.get(`https://api.nasa.gov/planetary/apod?start_date=${firstDate}&end_date=${secondDate}&api_key=ntzXMWjMGFouRqwuj1ub7Bv9eMSgbncydBcaFipg`)
   .then(data => {
     setSpaceState(data.data)
     console.log(data)
@@ -16,9 +20,21 @@ function App() {
   .catch(error => {
     console.log(error)
   })
-}, [dates])
+}, [firstDate, secondDate])
+
+const dateInputHandler = (event) => {
+  event.preventDefault();
+  console.log(event.target)
+  setFirstDate(event.target.childNodes[1].value);
+  setSecondDate(`${event.target.childNodes[3].value}`);
+  console.log(firstDate, secondDate);
+}
+
+
   return (
     <div className="App">
+      <Header date={secondDate}/>
+      <DateInput dateHandler={(event) => dateInputHandler(event)}/>
       <Display images={spaceState}/>
     </div>
   );

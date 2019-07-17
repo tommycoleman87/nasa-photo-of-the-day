@@ -5,9 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://images.pexels.com/photos/41951/solar-system-emergence-spitzer-telescope-telescope-41951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.display-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.apod-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 45%;
+
+}
+
+img {
+  max-width: 450px;
+  justify-self: flex-end;
+}
+
+.date-submit-btn {
+  margin-top: 10px;
 }

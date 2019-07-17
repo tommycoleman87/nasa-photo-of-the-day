@@ -3,9 +3,9 @@ import React from 'react';
 const Display = ({images}) => {
 
     return (
-        <div>{
+        <div className='display-container'>{
             images.map(img => {
-                return <div><h2>{img.explanation}</h2><img src={img.hdurl} alt={img.title} /></div>
+                return <div className='apod-image-container'><h2>{img.title}</h2><p>{img.explanation}</p><img src={img.hdurl} alt={img.title} /><p>©{img.copyright}</p></div>
             })
         }</div>
     )
