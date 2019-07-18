@@ -1,20 +1,31 @@
 import React from 'react';
+import { Card, Image } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
+
 
 const Display = ({images}) => {
-    if(!images) {
-        return<h1>Loading</h1>
-    };
+    
     return (
-        <div className='display-container'>{
+        <Card.Group style={{justifyContent: 'space-around'}}>{
+            
             images.map(img => {
-                if(img.media_type === 'video') {
-                return <div className='apod-image-container'><h2>{img.title}</h2><iframe src={img.url} title={img.title}/><p>©{img.copyright}</p><p>{img.explanation}</p></div>
-                } else {
-                    return <div className='apod-image-container'><h2>{img.title}</h2><img src={img.hdurl} alt={img.title} /><p>©{img.copyright}</p><p>{img.explanation}</p></div>;
+        
+                    return <Card>
+                        <Image src={img.url} wrapped ui={false} />
+                        <Card.Meta>© {img.copyright}</Card.Meta>
+                        <Card.Content>
+                            <Card.Header>{img.title}</Card.Header>
+                            <Card.Description>
+                            {img.explanation}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>;
                 }
-            })
-        }</div>
+            )
+            
+        }</Card.Group>
     )
 }
 
 export default Display;
+

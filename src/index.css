@@ -26,13 +26,15 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 45%;
+  align-items: center;
+  width: 100%;
+  text-align: left;
 }
 
-img {
-  max-width: 450px;
-  margin-top: 20px;
+h2 {
+  text-align: center;
 }
+
 
 .date-submit-btn {
   margin-top: 10px;
@@ -42,3 +44,5 @@ iframe {
   height: 300px;
   width: 400px;
 }
+
+

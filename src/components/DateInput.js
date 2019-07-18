@@ -1,9 +1,11 @@
 import React from 'react';
-
+import {Button} from './styles/styles';
 
 const DateInput = (props) => {
+   
     return (
         <div>
+          
             <h3>Pick a date range to display</h3>
             <form onSubmit={props.dateHandler}>
                 <p>Start Date</p>
@@ -13,8 +15,9 @@ const DateInput = (props) => {
                 <input type="date"
                 min="1995-06-16" />
                 <br />
-                <button className='date-submit-btn'>Submit</button>
+                <Button className='date-submit-btn'>Submit</Button>
             </form>
+           
         </div>
     )
 }
