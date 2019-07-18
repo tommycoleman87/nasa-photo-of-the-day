@@ -36,7 +36,7 @@ const dateInputHandler = (event) => {
 
 
   return (
-    <div className="App" style={{background: 'lightgray'}}>
+    <div className="App" style={{background: '#f2f2f2'}}>
       <ApodHeader />
       <DateInput dateHandler={(event) => dateInputHandler(event)}/>
       <Display images={spaceState}/>
