@@ -10,7 +10,7 @@ const Display = ({images}) => {
             
             images.map(img => {
         
-                    return <Card>
+                    return <Card style={{marginBottom: '20px'}} key={img.title}>
                         <Image src={img.url} wrapped ui={false} />
                         <Card.Meta>© {img.copyright}</Card.Meta>
                         <Card.Content>
